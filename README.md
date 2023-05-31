@@ -49,9 +49,9 @@ Units tests for success and failure situations using fake network manager.
 
 
 
-Game Screen
+Game Page Screen
 <img src="game_page.png" width="300" height="500"> 
 
-Home Screen
+Home Page Screen
 <img src="home_page.png" width="300" height="500"> |
 
