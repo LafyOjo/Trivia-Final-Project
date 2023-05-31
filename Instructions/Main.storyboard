@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--How To Play View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="HowToPlayViewController" id="Y6W-OH-hqX" customClass="HowToPlayViewController" customModule="Trivia" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Learn how to play in 3 easy steps..." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3a8-N8-3Sk">
+                                <rect key="frame" x="16" y="74" width="377" height="60"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="25"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="WjQ-rb-7zk">
+                                <rect key="frame" x="0.0" y="142" width="393" height="309"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="sectionIndexBackgroundColor" red="1" green="0.73397730772839531" blue="0.71561198359245437" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="TableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TableViewCell" rowHeight="74" id="u7f-qt-QVk" customClass="TableViewCell" customModule="Trivia" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="393" height="74"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u7f-qt-QVk" id="UPc-Kr-FWQ">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="74"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1. Select a category and difficulty" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkX-AH-khb">
+                                                    <rect key="frame" x="19.999999999999986" y="25" width="252.66666666666663" height="24"/>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                                    <color key="textColor" name="AccentColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="hkX-AH-khb" firstAttribute="top" secondItem="UPc-Kr-FWQ" secondAttribute="topMargin" constant="14" id="KDn-OE-Aj2"/>
+                                                <constraint firstItem="hkX-AH-khb" firstAttribute="leading" secondItem="UPc-Kr-FWQ" secondAttribute="leadingMargin" id="ckf-vM-Jrv"/>
+                                                <constraint firstItem="hkX-AH-khb" firstAttribute="centerY" secondItem="UPc-Kr-FWQ" secondAttribute="centerY" id="vxS-7F-VT5"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="step1" destination="hkX-AH-khb" id="Vg9-zB-ZhM"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="SecondTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="SecondTableViewCell" rowHeight="97" id="ZRK-MQ-s3V" customClass="SecondTableViewCell" customModule="Trivia" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="124" width="393" height="97"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZRK-MQ-s3V" id="jAL-xY-l0A">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="97"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2. Answer the question shown on the screen using one of the four answers " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qj0-XC-Awp">
+                                                    <rect key="frame" x="20" y="9" width="353" height="67"/>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                                    <color key="textColor" name="AccentColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="Qj0-XC-Awp" firstAttribute="leading" secondItem="jAL-xY-l0A" secondAttribute="leadingMargin" id="1xJ-GV-mLA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="Qj0-XC-Awp" secondAttribute="bottom" constant="10" id="DO8-fc-Doi"/>
+                                                <constraint firstItem="Qj0-XC-Awp" firstAttribute="trailing" secondItem="jAL-xY-l0A" secondAttribute="trailingMargin" id="eFg-Ar-4uz"/>
+                                                <constraint firstItem="Qj0-XC-Awp" firstAttribute="top" secondItem="jAL-xY-l0A" secondAttribute="topMargin" constant="-2" id="fT0-Ca-oKW"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="step2" destination="Qj0-XC-Awp" id="Oql-Eo-7cD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="ThirdTableViewCell" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ThirdTableViewCell" rowHeight="105" id="azX-im-LFv" customClass="ThirdTableViewCell" customModule="Trivia" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="221" width="393" height="105"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="azX-im-LFv" id="WUE-oh-puW">
+                                            <rect key="frame" x="0.0" y="0.0" width="393" height="105"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3. Answer all 10 questions then see your score in the end." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wmL-J0-ej8">
+                                                    <rect key="frame" x="20" y="11" width="353" height="65"/>
+                                                    <fontDescription key="fontDescription" type="italicSystem" pointSize="17"/>
+                                                    <color key="textColor" name="AccentColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="wmL-J0-ej8" secondAttribute="bottom" constant="18" id="3QH-bo-Snm"/>
+                                                <constraint firstItem="wmL-J0-ej8" firstAttribute="leading" secondItem="WUE-oh-puW" secondAttribute="leadingMargin" id="Wmg-y1-OcF"/>
+                                                <constraint firstItem="wmL-J0-ej8" firstAttribute="trailing" secondItem="WUE-oh-puW" secondAttribute="trailingMargin" id="YrT-Np-Can"/>
+                                                <constraint firstItem="wmL-J0-ej8" firstAttribute="top" secondItem="WUE-oh-puW" secondAttribute="top" constant="11" id="szR-Mo-Jpc"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="step3" destination="wmL-J0-ej8" id="aUw-Jv-jJD"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="GOOD LUCK!!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mmo-on-3dD">
+                                <rect key="frame" x="71" y="538" width="251" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="black" pointSize="35"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="you're gonna need it 👀" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G0h-aq-EI3">
+                                <rect key="frame" x="105" y="588" width="183" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" name="AccentColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" name="selectedMenuItemTextColor" catalog="System" colorSpace="catalog"/>
+                        <constraints>
+                            <constraint firstItem="Mmo-on-3dD" firstAttribute="centerX" secondItem="G0h-aq-EI3" secondAttribute="centerX" id="0zG-Jc-JNl"/>
+                            <constraint firstItem="WjQ-rb-7zk" firstAttribute="top" secondItem="3a8-N8-3Sk" secondAttribute="bottom" constant="8" id="4ZQ-js-Ht9"/>
+                            <constraint firstItem="WjQ-rb-7zk" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="4oi-SU-ewy"/>
+                            <constraint firstItem="3a8-N8-3Sk" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="HXa-dt-C1l"/>
+                            <constraint firstItem="3a8-N8-3Sk" firstAttribute="trailing" secondItem="vDu-zF-Fre" secondAttribute="trailing" id="PE2-lV-q3Q"/>
+                            <constraint firstItem="3a8-N8-3Sk" firstAttribute="leading" secondItem="5EZ-qb-Rvc" secondAttribute="leadingMargin" id="Sgh-JF-9rB"/>
+                            <constraint firstItem="Mmo-on-3dD" firstAttribute="top" secondItem="WjQ-rb-7zk" secondAttribute="bottom" constant="87" id="W97-5t-80o"/>
+                            <constraint firstItem="G0h-aq-EI3" firstAttribute="top" secondItem="Mmo-on-3dD" secondAttribute="bottom" constant="8" id="aqu-Km-Gv5"/>
+                            <constraint firstItem="WjQ-rb-7zk" firstAttribute="trailing" secondItem="3a8-N8-3Sk" secondAttribute="trailing" id="hDG-nr-2lh"/>
+                            <constraint firstItem="Mmo-on-3dD" firstAttribute="centerX" secondItem="3a8-N8-3Sk" secondAttribute="centerX" constant="-8" id="kka-HC-hJp"/>
+                            <constraint firstItem="WjQ-rb-7zk" firstAttribute="bottom" secondItem="vDu-zF-Fre" secondAttribute="bottom" constant="-367" id="mi5-A7-y2r"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Lrv-en-ADw"/>
+                    <connections>
+                        <outlet property="funnyLabel" destination="G0h-aq-EI3" id="T0F-Cu-W1O"/>
+                        <outlet property="goodLuck" destination="Mmo-on-3dD" id="n11-5k-hEh"/>
+                        <outlet property="howToPlayLabel" destination="3a8-N8-3Sk" id="uuB-cJ-rPL"/>
+                        <outlet property="tableView" destination="WjQ-rb-7zk" id="iCL-QN-UcS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1038.9312977099237" y="-2.1126760563380285"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="AccentColor">
+            <color red="0.83399999141693115" green="0.10300000011920929" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
