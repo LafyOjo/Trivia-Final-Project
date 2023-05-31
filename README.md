@@ -30,7 +30,8 @@ N/A
 
 # Design Patterns
 
-Async await.
+Async await and Dependency Injection using Network Manager and Networkable Protocol.
+
 
 
 
