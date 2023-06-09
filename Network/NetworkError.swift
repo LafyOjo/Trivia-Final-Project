@@ -10,6 +10,7 @@ enum NetworkError :String{
     case dataNotFoundError
     case parsingError
     case invalidUrlError
+    case timeOutError
 }
 
 extension NetworkError : LocalizedError {
