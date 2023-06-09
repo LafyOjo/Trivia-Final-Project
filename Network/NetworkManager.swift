@@ -19,6 +19,4 @@ class NetworkManager: NetworkableProtocol {
             throw NetworkError.dataNotFoundError
         }
     }
-    
-    
 }
