@@ -10,7 +10,7 @@ import SwiftUI
 struct GameScreen: View {
     @State private(set) var isErrorOccured = false
     @EnvironmentObject var coordinator: Coordinator
-    @StateObject var gameViewModel = GameScreenViewModel(manager: NetworkManager())
+    @EnvironmentObject var gameViewModel: GameScreenViewModel
     var body: some View {
         ZStack{
             Image("BG2").resizable().edgesIgnoringSafeArea(.all)
@@ -19,7 +19,7 @@ struct GameScreen: View {
                     Text("Trivia").font(.title).foregroundColor(Color("AccentColor")).fontWeight(.heavy)
                     Spacer()
                     Text("\(gameViewModel.index + 1) / \(gameViewModel.length)").font(.title).foregroundColor(Color("AccentColor")).fontWeight(.light)
-                }
+                }.navigationBarBackButtonHidden(true)
                 
                 ProgressBar(progress: gameViewModel.progress)
                 
@@ -29,7 +29,7 @@ struct GameScreen: View {
                         .padding().font(.system(size: 20)).bold().foregroundColor(Color("AccentColor"))
                     
                     ForEach(gameViewModel.answerChoices, id: \.id) { answer in
-                        GameAnswer(answerModel: answer)
+                        GameAnswer(answerModel: answer, gameViewModel: gameViewModel)
                         
                     }
                     
@@ -44,19 +44,23 @@ struct GameScreen: View {
                 
                 if gameViewModel.answerSelected == true{
                     Button {
-                        gameViewModel.coordinator = coordinator
-                        gameViewModel.goToNextQuestion()
+                       gameViewModel.coordinator = coordinator
+                       gameViewModel.goToNextQuestion()
                     } label: {
-                        PrimaryButton(text: "Next", background: Color("AccentColor"))
+                        PrimaryButton(text: "Next", background:   Color("AccentColor"))
                     }
+
+                    
+                   
                 }else{
                     Button {
                         gameViewModel.coordinator = coordinator
                         gameViewModel.goToNextQuestion()
                     } label: {
-                        PrimaryButton(text: "Next", background: Color(hue: 1.0, saturation: 0.0, brightness: 0.564, opacity: 0.327))
-                    }
-//                    .disabled(!gameViewModel.answerSelected)
+                        PrimaryButton(text: "Next", background:  gameViewModel.answerSelected ? Color.purple : Color.gray)
+                    }.disabled(!gameViewModel.answerSelected)
+                
+                    
                 }
                 
                     
@@ -65,7 +69,7 @@ struct GameScreen: View {
                 Spacer()
                 
                 
-            }.padding()
+            }.padding().navigationBarBackButtonHidden(true)
         }
         
     }

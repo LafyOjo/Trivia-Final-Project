@@ -8,12 +8,34 @@
 import SwiftUI
 
 struct OptionsScreen: View {
+    @EnvironmentObject var gameViewModel: GameScreenViewModel
+    @EnvironmentObject var coordinator: Coordinator
+    @State private var selectedCategory: String?
     var body: some View {
         VStack{
-            List{
-                
+            Text("Selected Category: \(selectedCategory ?? "")")
+                           .font(.headline)
+
+                       Picker("Select Category", selection: $selectedCategory) {
+                           ForEach(gameViewModel.gameScreenList , id: \.category) { category in
+                               Text(verbatim: ("\(category)"))
+                           }
+                       }.pickerStyle(MenuPickerStyle())
+            Button {
+                coordinator.goToGameScreen()
+            } label: {
+                PrimaryButton(text: "Start Game")
             }
+            
         }
+        
+       
+
+                   .onAppear {
+                       gameViewModel.gameScreenList
+        }.navigationBarBackButtonHidden(true)
+        
+        
     }
 }
 

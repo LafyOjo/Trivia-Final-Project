@@ -23,7 +23,7 @@ struct HomeScreen: View {
                 
                 Group{
                     Button {
-                        coordinator.goToGameScreen()
+                        coordinator.goToOptionsScreen()
                     } label: {
                         Text("Start Game")
                     }
@@ -33,9 +33,9 @@ struct HomeScreen: View {
                         Text("How To Play")
                     }
                     Button {
-                        
+                        coordinator.goToLeaderboardScreen()
                     } label: {
-                        Text("High Score")
+                        Text("Leaderboard")
                     }
                 }.buttonStyle(.borderedProminent).cornerRadius(30)
                     .shadow(radius: 10)

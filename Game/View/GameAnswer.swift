@@ -9,7 +9,7 @@ import SwiftUI
 
 struct GameAnswer: View {
     var answerModel: AnswerModel
-    @StateObject var gameViewModel = GameScreenViewModel(manager: NetworkManager())
+    @ObservedObject var gameViewModel: GameScreenViewModel
     @State private var isSelected = false
     
     var green = Color(hue: 0.437, saturation: 0.711, brightness: 0.711)
@@ -23,19 +23,25 @@ struct GameAnswer: View {
             
             if isSelected{
                 Spacer()
-                
+
                 Image(systemName: answerModel.isCorrect ? "checkmark.circle.fill" : "x.circle.fill").foregroundColor(answerModel.isCorrect ? green : red)
             }
             
-        }
+        }.navigationBarBackButtonHidden(true)
         .padding().frame(maxWidth: .infinity, alignment: .leading)
 
             .foregroundColor(gameViewModel.answerSelected ? (isSelected ? Color("AccentColor") : .gray) : Color("AccentColor"))
             .background(.white).cornerRadius(10)
+        
             .shadow(color: isSelected ? (answerModel.isCorrect ? green : red) : .gray, radius: 5, x: 0.5, y: 0.5).opacity(0.7)
+        
+//            .shadow(color: isSelected ? Color("AccentColor"): .gray, radius: 5, x: 0.5, y: 0.5).opacity(0.7)
+
+        
             .onTapGesture {
-                if !gameViewModel.answerSelected{
+                if !gameViewModel.answerSelected == true{
                     isSelected = true
+                    gameViewModel.answerSelected = true
                     gameViewModel.selectAnswer(answer: answerModel)
                 }
             }
@@ -44,6 +50,6 @@ struct GameAnswer: View {
 
 struct GameAnswer_Previews: PreviewProvider {
     static var previews: some View {
-        GameAnswer(answerModel: AnswerModel(answer: "Answer", isCorrect: true))
+        GameAnswer(answerModel: AnswerModel(answer: "answer", isCorrect: true), gameViewModel: GameScreenViewModel(manager: NetworkManager()))
     }
 }

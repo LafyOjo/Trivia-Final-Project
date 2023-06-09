@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct EndGame: View {
-    @StateObject var gameViewModel = GameScreenViewModel(manager: NetworkManager())
+    @EnvironmentObject var gameViewModel: GameScreenViewModel
     @EnvironmentObject var coordinator: Coordinator
 
     var body: some View {
@@ -17,16 +17,23 @@ struct EndGame: View {
                 Text("Congratulations, you completed the game!🥳")
                 
                 Text("You scored \(gameViewModel.score) out of \(gameViewModel.length)")
-                
-                Button {
-                    coordinator.goToGameScreen()
-                } label: {
-                    PrimaryButton(text: "Play again")
+                Group{
+                    Button {
+                        coordinator.goToGameScreen()
+                    } label: {
+                        PrimaryButton(text: "Play again")
+                    }
+                    
+                    Button {
+                        coordinator.goToHomeScreen()
+                    } label: {
+                        PrimaryButton(text: "go back home")
+                    }
+                    
                 }
-
-                
             }.foregroundColor(Color("AccentColor")).padding().frame(maxWidth: .infinity,maxHeight: .infinity).font(.title).fontWeight(.heavy)
                 .background(Color.blue.opacity(0.3))
+                .navigationBarBackButtonHidden(true)
 //        }else{
 //            HomeScreen()
 //        }
@@ -36,6 +43,6 @@ struct EndGame: View {
 
 struct EndGame_Previews: PreviewProvider {
     static var previews: some View {
-        EndGame()
+        EndGame().environmentObject(GameScreenViewModel(manager: NetworkManager()))
     }
 }

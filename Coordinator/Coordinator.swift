@@ -11,6 +11,14 @@ import SwiftUI
 class Coordinator: ObservableObject{
     @Published var navigationPath = NavigationPath()
     
+    func goToHomeScreen(){
+        navigationPath.append(MyScreen.HomeScreen)
+    }
+    
+    func goToOptionsScreen(){
+        navigationPath.append(MyScreen.OptionsScreen)
+    }
+    
     func goToGameScreen(){
         navigationPath.append(MyScreen.GameScreen)
     }
@@ -22,6 +30,10 @@ class Coordinator: ObservableObject{
     func goToEndGameScreen(){
         navigationPath.append(MyScreen.EndGameScreen)
     }
+    
+    func goToLeaderboardScreen(){
+        navigationPath.append(MyScreen.LeaderboardScreen)
+    }
 
     
     @ViewBuilder
@@ -29,19 +41,25 @@ class Coordinator: ObservableObject{
         switch screen{
         case .HomeScreen:
             HomeScreen()
+        case .OptionsScreen:
+            OptionsScreen()
         case .GameScreen:
             GameScreen()
         case .UIKitScreen:
             UIKitNavView()
         case .EndGameScreen:
             EndGame()
+        case .LeaderboardScreen:
+            LeaderboardScreen()
         }
     }
 }
 
 enum MyScreen{
     case HomeScreen
+    case OptionsScreen
     case GameScreen
     case UIKitScreen
     case EndGameScreen
+    case LeaderboardScreen
 }

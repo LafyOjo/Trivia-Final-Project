@@ -18,7 +18,7 @@ class GameScreenViewModel : ObservableObject{
     @Published private(set) var length = 0
     @Published private(set) var index = 0
     @Published private(set) var reachedEnd = false
-    @Published private(set) var answerSelected = false
+    @Published var answerSelected = false
     @Published private(set) var question: AttributedString = ""
     @Published private(set) var answerChoices: [AnswerModel] = []
     @Published private(set) var progress: CGFloat = 0.00
@@ -41,19 +41,20 @@ class GameScreenViewModel : ObservableObject{
             let gameData = try JSONDecoder().decode(GameDataModel.self, from: data)
             let gameDataQuestions = gameData.results.map { game in
                 Result(category: game.category, type: game.type, difficulty: game.difficulty, question: game.question, correctAnswer: game.correctAnswer, incorrectAnswers: game.incorrectAnswers)
-            
-            }
-                self.index = 0
-//                self.score = 0
-                self.progress = 0.00
-//                self.reachedEnd = false
                 
-                self.gameScreenList = gameDataQuestions
-                self.length = self.gameScreenList.count
-                self.setQuestion()
+            }
+                            self.index = 0
+                            self.score = 0
+                            self.progress = 0.00
+            //                self.reachedEnd = false
+            //
+            self.gameScreenList = gameDataQuestions
+            
+            self.length = self.gameScreenList.count
+            self.setQuestion()
             
             
-        
+            
             
         }catch let error{
             switch error{
@@ -76,7 +77,6 @@ class GameScreenViewModel : ObservableObject{
             setQuestion()
         } else{
             reachedEnd = true
-            print("game finished")
             coordinator?.goToEndGameScreen()
         }
     }
@@ -97,11 +97,9 @@ class GameScreenViewModel : ObservableObject{
         if answerSelected == false{
             answerSelected = true
         }
-        if answer.isCorrect{
+        if answer.isCorrect == true {
             score = score + 1
+            print(score)
         }
     }
-
-    
-    
 }

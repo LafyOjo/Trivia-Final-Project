@@ -35,6 +35,8 @@ struct Result: Decodable {
         }
     }
     
+   
+    
     var answers: [AnswerModel]{
         do{
             let correctAnswer = [AnswerModel(answer: try AttributedString (markdown: correctAnswer), isCorrect: true)]
@@ -48,6 +50,8 @@ struct Result: Decodable {
             return []
         }
     }
+    
+   
 
     enum CodingKeys: String, CodingKey {
         case category, type, difficulty, question

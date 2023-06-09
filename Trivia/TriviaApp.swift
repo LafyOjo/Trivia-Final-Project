@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct TriviaApp: App {
+    @StateObject private var gameViewModel = GameScreenViewModel(manager: NetworkManager())
+    @StateObject private var coordinator = Coordinator()
     var body: some Scene {
         WindowGroup {
-            MainScreen().environmentObject(Coordinator())
+            MainScreen().environmentObject(gameViewModel)
+                .environmentObject(coordinator)
         }
     }
 }
