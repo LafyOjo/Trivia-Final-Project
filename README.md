@@ -56,3 +56,9 @@ Game Page Screen
 Home Page Screen
 <img src="home_page.png" width="300" height="500"> |
 
+
+## React Native Version (WIP)
+
+A scaffolded React Native app is available in the `react-native-app` directory. It uses Expo and Firebase to demonstrate authentication, Firestore integration, and a simple game loop fetching questions from the OpenTDB API.
+
+Run `npm install` in that folder and then `npm start` to launch the development server.
